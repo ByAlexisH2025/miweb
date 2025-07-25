@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsGrup Arq</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ConsGrup <span>Arq</span></div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="has-submenu">
+                    <a href="#">Servicios <span class="arrow">&#9662;</span></a>
+                    <ul class="submenu">
+                        <li><a href="diseño.html">Diseño y Planificación</a></li>
+                        <li><a href="#construccion">Construcción</a></li>
+                        <li><a href="#certificaciones">Certificaciones Sostenibles</a></li>
+                    </ul>
+                </li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="sobremi.html">Sobre mí</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrusel principal a pantalla completa -->
+    <section id="hero-carrusel" class="hero-carrusel">
+        <button class="carrusel-btn prev">&#10094;</button>
+        <div class="slides">
+            <!-- Slide 1: Presentación / Logo -->
+            <div class="slide active">
+                <div class="slide-content slide-presentacion">
+                    <img src="img/logo.jpg" alt="Logo arquitecto" class="hero-logo"/>
+                    <div class="presentacion-texto">
+                        <h2>Bienvenido a ConsGrup</h2>
+                        <p>
+                            Soy Alexis Hurtado, arquitecto y fundador. Desde el primer trazo hasta la obra final, mi compromiso es crear espacios únicos, funcionales y estéticamente impactantes que superen tus expectativas.<br>
+                            Creo en la arquitectura como una forma de transformar vidas, fusionando creatividad y técnica para lograr proyectos duraderos y significativos.<br>
+                            <b>¡Conversemos sobre tu próximo proyecto y construyamos juntos el espacio que imaginas!</b>
+                        </p>
+                        <a href="portafolio.html" class="btn-main">Ver proyectos</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2: Imagen de Proyecto -->
+            <div class="slide">
+                <img src="img/proyecto1.jpg" alt="Proyecto 1" class="slide-img">
+            </div>
+            <!-- Slide 3: Imagen de Proyecto -->
+            <div class="slide">
+                <img src="img/proyecto2.jpg" alt="Proyecto 2" class="slide-img">
+            </div>
+            <!-- Agrega más slides aquí si lo deseas -->
+        </div>
+        <button class="carrusel-btn next">&#10095;</button>
+    </section>
+
+    <!-- Servicios en tarjetas tipo valores -->
+    <section class="servicios-box">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-opciones valores-empresa">
+            <div class="servicio-card valor-card rojo">
+                <div class="icono-valor">
+                    <!-- Ejemplo SVG para Diseño -->
+                    <svg width="42" height="42" fill="white" viewBox="0 0 24 24"><path d="M17.88 17.29l-2.79-2.8c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l2.8 2.79a.996.996 0 101.4-1.4zM12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                </div>
+                <h3>Diseño</h3>
+                <p>Diseño arquitectónico creativo, funcional y personalizado para cada cliente.</p>
+            </div>
+            <div class="servicio-card valor-card azul">
+                <div class="icono-valor">
+                    <!-- Ejemplo SVG para Planificación -->
+                    <svg width="42" height="42" fill="white" viewBox="0 0 24 24"><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/><circle cx="12" cy="12" r="5"/></svg>
+                </div>
+                <h3>Planificación</h3>
+                <p>Planificación técnica y estratégica para que tu obra sea eficiente y sin sorpresas.</p>
+            </div>
+            <div class="servicio-card valor-card naranja">
+                <div class="icono-valor">
+                    <!-- Ejemplo SVG para Construcción -->
+                    <svg width="42" height="42" fill="white" viewBox="0 0 24 24"><path d="M12 4a8 8 0 110 16 8 8 0 010-16zm0 2a6 6 0 100 12 6 6 0 000-12zm-2 8l4-4m0 0v3a1 1 0 001 1h3"/></svg>
+                </div>
+                <h3>Construcción</h3>
+                <p>Ejecución de proyectos con calidad, responsabilidad y cumplimiento de plazos.</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/59175093046" class="whatsapp" target="_blank" title="Contáctame por WhatsApp">💬</a>
+    <footer>
+        <div class="footer-content">
+            <span>© 2025 ConsGrup Arq. Todos los derechos reservados.</span>
+        </div>
+    </footer>
+
+    <!-- Script del carrusel principal -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll('.slide');
+        const prev = document.querySelector('.carrusel-btn.prev');
+        const next = document.querySelector('.carrusel-btn.next');
+        let index = 0;
+
+        function showSlide(idx) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === idx);
+            });
+        }
+        prev.addEventListener('click', () => {
+            index = (index - 1 + slides.length) % slides.length;
+            showSlide(index);
+        });
+        next.addEventListener('click', () => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        });
+    });
+    </script>
+</body>
+</html>
